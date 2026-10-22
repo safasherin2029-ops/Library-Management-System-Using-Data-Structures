@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">DATA STRUCTURES MINI PROJECT</p>
+      <h1>Library Management System</h1>
+      <p class="subtitle">A simple demonstration of Stack (LIFO) and Queue (FIFO) using Java.</p>
+      <span class="status"><span class="status-dot"></span> Java server interface</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Manage books and student requests</h2>
+      <p>Use the stack to process returned books and the queue to serve students in the order they arrive.</p>
+    </section>
+
+    <div class="panels">
+      <section class="panel stack-panel">
+        <div class="panel-heading">
+          <div class="symbol">▤</div>
+          <div><h2>Returned Books</h2><p>Stack · Last-In, First-Out (LIFO)</p></div>
+        </div>
+        <form id="book-form" class="entry-form">
+          <label for="book-input">Book title</label>
+          <div class="input-row">
+            <input id="book-input" name="book" maxlength="120" placeholder="e.g. Data Structures in Java" required>
+            <button type="submit">Push Book</button>
+          </div>
+        </form>
+        <div class="actions">
+          <button id="pop-book" class="secondary" type="button">Pop / Process Latest</button>
+          <button id="refresh-books" class="quiet" type="button">Refresh</button>
+        </div>
+        <div class="list-header"><h3>Stack contents</h3><span id="book-count" class="count">0 books</span></div>
+        <p class="hint">Top of stack is shown first.</p>
+        <ol id="book-list" class="item-list"><li class="empty">No returned books yet.</li></ol>
+      </section>
+
+      <section class="panel queue-panel">
+        <div class="panel-heading">
+          <div class="symbol">☷</div>
+          <div><h2>Student Waiting List</h2><p>Queue · First-In, First-Out (FIFO)</p></div>
+        </div>
+        <form id="student-form" class="entry-form">
+          <label for="student-input">Student name</label>
+          <div class="input-row">
+            <input id="student-input" name="student" maxlength="120" placeholder="e.g. Anu Thomas" required>
+            <button type="submit">Enqueue</button>
+          </div>
+        </form>
+        <div class="actions">
+          <button id="serve-student" class="secondary" type="button">Dequeue / Serve Next</button>
+          <button id="refresh-students" class="quiet" type="button">Refresh</button>
+        </div>
+        <div class="list-header"><h3>Queue contents</h3><span id="student-count" class="count">0 students</span></div>
+        <p class="hint">The first student in line is shown first.</p>
+        <ol id="student-list" class="item-list"><li class="empty">No students waiting.</li></ol>
+      </section>
+    </div>
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+    <section class="concepts">
+      <h2>Data structures used</h2>
+      <div class="concept-grid">
+        <article><h3>Stack — LIFO</h3><p>The last book pushed onto the stack is the first book popped from it.</p></article>
+        <article><h3>Queue — FIFO</h3><p>The first student enqueued is the first student served and removed from the queue.</p></article>
+      </div>
+    </section>
+    <footer>Library Management System Using Data Structures · Java + HTML + CSS + JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
